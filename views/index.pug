@@ -2,4 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p ヒゲソリのコストパフォーマンスを計算します。
+  //- 二つの始め方で、入力欄はスライドして出てくる
+  #input-form
+    h2 きょうから、はじめる
+      form(action="POST")
+        input#razor-price(type="number", name="")
+        input(type="button", value="計算する")
+    h2 日付から、はじめる
+      form(action="POST")
+        input#start-date(type="date", name="")
+        input#razor-price(type="number", name="")
+        input(type="button", value="計算する")
