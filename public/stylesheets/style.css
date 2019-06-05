@@ -1,8 +1,61 @@
+@charset "utf-8";
+/* デフォルト（480px 未満）
+   デバイスで共通で利用するスタイル
+   スマートフォンに最適化したレイアウト
+  */
 body {
-  padding: 50px;
+  padding: 0.5em;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.title {
+  background-color: #364e96;
+  color: #fff;
+  padding: 0.5em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 150%;
+}
+
+h2 {
+  color: #364e96;
+  padding: 0.5em 0;
+  border-top: solid 3px #364e96;
+  border-bottom: solid 3px #364e96;
+}
+
+.btn-square-shadow {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-color: #364e96;
+  color: #fff;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.input-area {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0.5em auto;
+  max-width: 32em;
+  padding: 0.5em;
+}
+
+@media screen and (min-width : 480px){
+  /* 最小幅 480px 以上の指定 */
+}
+@media screen and (min-width : 768px){
+  /* 最小幅 768px 以上の指定 */
+}
+@media screen and (min-width : 1024px){
+  /* 最小幅 1024px 以上の指定 */
 }

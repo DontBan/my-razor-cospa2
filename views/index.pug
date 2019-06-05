@@ -1,16 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p ヒゲソリのコストパフォーマンスを計算します。
+  header
+    h1.title= title
+    p.info ヒゲソリのコストパフォーマンスを計算します。
   //- 二つの始め方で、入力欄はスライドして出てくる
   #input-form
-    h2 きょうから、はじめる
+    h2 どちらかを選んで始めてください。
+    h3#start-today.btn-square-shadow 今日から始める
+    #today-form.input-area
       form(action="POST")
+        h4 替刃ひとつ分の値段を入力して下さい。
         input#razor-price(type="number", name="")
         input(type="button", value="計算する")
-    h2 日付から、はじめる
+    h3#start-someday.btn-square-shadow すでに使い始めている。
+    #someday-form.input-area
       form(action="POST")
+        h4 使い始めた日にちを選んでください。
         input#start-date(type="date", name="")
+        h4 替刃ひとつ分の値段を入力して下さい。
         input#razor-price(type="number", name="")
         input(type="button", value="計算する")
+
+  script(src="/javascripts/index.js")
