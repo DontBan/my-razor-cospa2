@@ -9,17 +9,18 @@ block content
     h2 どちらかを選んで始めてください。
     h3#start-today.btn-square-shadow 今日から始める
     #today-form.input-area
-      form(action="POST")
-        h4 替刃ひとつ分の値段を入力して下さい。
-        input#razor-price(type="number", name="")
-        input(type="button", value="計算する")
+      form(action="/" method="post")
+        label(for="razor-price") 替刃ひとつ分の値段を入力して下さい。
+        input#razor-price(type="number", name="price1" required)
+        button(type="submit" name="button1" value="button1") 計算する
     h3#start-someday.btn-square-shadow すでに使い始めている。
     #someday-form.input-area
-      form(action="POST")
-        h4 使い始めた日にちを選んでください。
-        input#start-date(type="date", name="")
-        h4 替刃ひとつ分の値段を入力して下さい。
-        input#razor-price(type="number", name="")
-        input(type="button", value="計算する")
+      form(action="/" method="post")
+        label(for="start-date") 使い始めた日にちを選んでください。
+        input#start-date(type="date" name="date" min="2019-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required)
+        br
+        label(for="razor-price2") 替刃ひとつ分の値段を入力して下さい。
+        input#razor-price2(type="number" name="price2" required)
+        button(type="submit" name="button2" value="button2") 計算する
 
   script(src="/javascripts/index.js")
