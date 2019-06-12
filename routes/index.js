@@ -62,4 +62,11 @@ function result(res, toCalc) {
   });
 }
 
+// cookieを削除してトップページにリダイレクト
+router.post('/restart', function (req, res, next) {
+  res.clearCookie('toCalc');
+
+  res.redirect(req.baseUrl + '/');
+});
+
 module.exports = router;
