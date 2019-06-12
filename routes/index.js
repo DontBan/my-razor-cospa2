@@ -38,14 +38,28 @@ router.get('/result', function (req, res, next) {
 });
 
 function result(res, toCalc) {
+  console.log('resultページ');
+
   // 経過日数計算
+  // yyyy-mm-ddで保存されている
+  const from = moment(toCalc.start);
+  // console.log(from.isValid());
+  const to = moment();
+  const days = Math.floor(moment.duration(to.diff(from)).asDays());
+  // console.log(days);
 
   // コスパ計算
+  const cospa = Math.round(toCalc.price / days);
 
-  console.log('resultページ');
-  console.log(toCalc);
+
+
   // コスパと今日で何日目かと替刃の値段を渡す
-  res.render('result', { title: 'ヒゲソリ替刃コスパ計算結果' });
+  res.render('result', {
+    title: 'ヒゲソリ替刃コスパ計算結果',
+    cospa: cospa,
+    days: days,
+    price: toCalc.price
+  });
 }
 
 module.exports = router;
