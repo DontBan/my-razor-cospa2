@@ -3,8 +3,8 @@ extends layout
 block content
   h1.title= title
   p
-  h2 コスパは#{cospa}円です。
+  h2= message
   p 今日で#{days}日目
-  p 替刃一つ当たり、#{price}円です。
+  p 替刃一つは、#{price}円です。
   form(action="/restart" method="post")
     button(type="submit" name="restart" value="restart") 新たに始める
