@@ -38,9 +38,13 @@ router.get('/result', function (req, res, next) {
 });
 
 function result(res, toCalc) {
-  // コスパと今日で何日目かと替刃の値段を取得する
+  // 経過日数計算
+
+  // コスパ計算
+
   console.log('resultページ');
   console.log(toCalc);
+  // コスパと今日で何日目かと替刃の値段を渡す
   res.render('result', { title: 'ヒゲソリ替刃コスパ計算結果' });
 }
 
