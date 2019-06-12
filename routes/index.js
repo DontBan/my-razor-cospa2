@@ -48,15 +48,24 @@ function result(res, toCalc) {
   const days = Math.floor(moment.duration(to.diff(from)).asDays());
   // console.log(days);
 
-  // コスパ計算
-  const cospa = Math.round(toCalc.price / days);
-
-
+  // コスパを計算してメッセージをつくる
+  // コスパを見て、替刃を替えるか判断するという流れなので
+  // 当日は、今日から使い始めですね
+  // 昨日ならば、1日使ったので1で値段を割る
+  // 一昨日ならば、2日使ったので2で値段を割る
+  let message = '';
+  if (days === 0) {
+    // 当日なら、コスパは替刃一本分のまま
+    message = '今日から使い始めですね。';
+  } else {
+    const cospa = Math.round(toCalc.price / days);
+    message = '昨日まで使って一日当たり' + cospa + '円です。';
+  }
 
   // コスパと今日で何日目かと替刃の値段を渡す
   res.render('result', {
     title: 'ヒゲソリ替刃コスパ計算結果',
-    cospa: cospa,
+    message: message,
     days: days,
     price: toCalc.price
   });
