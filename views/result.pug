@@ -6,4 +6,5 @@ block content
   h2 コスパは#{cospa}円です。
   p 今日で#{days}日目
   p 替刃一つ当たり、#{price}円です。
-  input(type="button", value="新たに始める")
+  form(action="/restart" method="post")
+    button(type="submit" name="restart" value="restart") 新たに始める
