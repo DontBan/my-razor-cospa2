@@ -6,6 +6,7 @@ const moment = require('moment');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   if (req.headers.cookie && req.headers.cookie.includes('toCalc=')) {
+    console.log(req.headers.cookie.split)
     const toCalc = JSON.parse(req.headers.cookie.split('toCalc=')[1]);
     result(res, toCalc);
   } else {
