@@ -13,7 +13,7 @@
     "express-session": "^1.13.0",
     "helmet": "^3.8.2",
     "http-errors": "~1.7.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "~1.9.1",
     "passport": "^0.3.2",
     "passport-github2": "^0.1.9",
